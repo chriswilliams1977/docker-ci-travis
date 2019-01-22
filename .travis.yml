@@ -1,0 +1,8 @@
+sudo: required
+services:
+- docker
+before_install:
+- docker build -t chriswilliams1977/docker-ci -f Dockerfile.dev .
+script:
+- docker run chriswilliams1977/docker-ci npm run test -- --coverage
+
